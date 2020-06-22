@@ -12,6 +12,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
 
+  resolve: {
+    extensions: [".js", ".jsx", ".json"] // 省略后缀
+  },
+
   module:{
     rules:[
       {
@@ -41,9 +45,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'//模板文件，将根据这个文件生成
     }),
-    new CleanWebpackPlugin({
-      verbose: true // 显示日志
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin()
   ]
 };
